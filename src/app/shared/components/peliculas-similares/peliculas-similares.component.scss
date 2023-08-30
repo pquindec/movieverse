@@ -1,0 +1,9 @@
+.peliculas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(to bottom right, #2a0c3a, #000000);
+  /* Degradado púrpura oscuro */
+  padding: 50px;
+}

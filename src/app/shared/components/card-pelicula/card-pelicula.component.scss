@@ -1,0 +1,30 @@
+.card {
+  width: 18rem;
+  /* Ancho fijo para todas las tarjetas */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 300px;
+  /* Altura fija para la imagen */
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+  overflow: hidden;
+  /* Oculta el exceso de texto */
+  text-overflow: ellipsis;
+  /* Agrega tres puntos suspensivos (...) al final del texto */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Muestra hasta 3 líneas de texto */
+  -webkit-box-orient: vertical;
+}

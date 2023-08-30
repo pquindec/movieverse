@@ -1,0 +1,9 @@
+<ngb-carousel [interval]="0" [showNavigationArrows]="false">
+    <ng-container *ngFor="let grupoPeliculas of peliculasGrupos">
+        <ng-template ngbSlide>
+            <div class="peliculas-container">
+                <app-card-pelicula *ngFor="let pelicula of grupoPeliculas" [pelicula]="pelicula"></app-card-pelicula>
+            </div>
+        </ng-template>
+    </ng-container>
+</ngb-carousel>

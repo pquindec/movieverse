@@ -1,0 +1,11 @@
+<p>peliculas works!</p>
+
+<div *ngFor="let pelicula of peliculas">
+    <h2>{{ pelicula.title }}</h2>
+    <h4>{{ pelicula.overview }}</h4>
+    <p>Porcentaje de aprobación: {{ pelicula.vote_average}}</p>
+    <p>Id película: {{ pelicula.id}}</p>
+
+    <button (click)="verDetalle(pelicula.id)">Ver detalle</button>
+    <hr>
+</div>

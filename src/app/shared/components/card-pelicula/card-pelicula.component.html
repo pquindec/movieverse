@@ -1,0 +1,9 @@
+<div *ngIf="pelicula" class="card">
+    <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/original/' + pelicula.poster_path"
+    [alt]="'description'" />
+    <div class="card-body">
+        <h5 class="card-title">{{ pelicula.original_title }}</h5>
+        <p class="card-text">{{ pelicula.overview }}</p>
+        <a (click)="abrirPelicula()"  class="btn btn-primary">Ver detalles</a>
+    </div>
+</div>

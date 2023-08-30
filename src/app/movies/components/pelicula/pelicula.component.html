@@ -1,0 +1,47 @@
+<div *ngIf="pelicula">
+    <div class="pelicula-details">
+        <img src="{{'https://image.tmdb.org/t/p/original/' + pelicula?.poster_path }}" alt="{{ pelicula?.title }}"
+            class="poster-image">
+        <div class="pelicula-info">
+            <h2>{{ pelicula?.title }}</h2>
+            <p class="tagline">{{ pelicula?.tagline }}</p>
+            <p class="overview">{{ pelicula?.overview }}</p>
+            <div class="genres">
+                <strong>Genres: </strong>
+                <span *ngFor="let genre of pelicula.genres">{{ genre.name }}</span>
+            </div>
+            <p><strong>Release Date: </strong> {{ pelicula?.release_date }}</p>
+            <p><strong>Runtime: </strong> {{ pelicula?.runtime }} minutes</p>
+            <p><strong>Rating: </strong> {{ pelicula?.vote_average }}</p>
+            <p><strong>Production Companies: </strong></p>
+            <ul class="production-companies">
+                <li *ngFor="let company of pelicula?.production_companies">
+                    <img src="{{'https://image.tmdb.org/t/p/original/' + company?.logo_path}}" alt="{{ company.name }}"
+                        class="company-logo">
+                </li>
+            </ul>
+            <p><strong>Homepage: </strong> <a [href]="pelicula?.homepage" target="_blank">{{ pelicula?.title }}
+                    Website</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="peliculasSimilares.length > 0">
+    <h4>Peliculas similares</h4>
+    <app-peliculas-similares [peliculas]="peliculasSimilares"></app-peliculas-similares>
+</div>
+
+<div>
+    <h4>Imagenes</h4>
+    <ngb-carousel #carouselImg [interval]="10000" class="my-carousel">
+        <ng-template ngbSlide *ngFor="let img of backdrops; index as i">
+            <div class="carousel-caption">
+            </div>
+            <div class="picsum-img-wrapper">
+                <img [src]="'https://image.tmdb.org/t/p/original/' + img.file_path"
+                    [alt]="'Slide ' + (i + 1) + ' description'" />
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
